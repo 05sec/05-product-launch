@@ -1,7 +1,7 @@
 ---
 import "../assets/styles/global.css";
 import Seo from "../components/UI/Seo.astro";
-import Header from "../components/Global/Header.astro";
+import Header from "../components/Global/Header.vue";
 import Footer from "../components/Global/Footer.astro";
 
 export interface Props {
@@ -16,11 +16,11 @@ export interface Props {
 }
 
 const {
-  title = "Church Name - A Welcoming Christian Community",
-  description = "We are a welcoming Christian community dedicated to sharing God's love through worship, fellowship, and service.",
+  title = "凌武科技 - 让数据更安全、让安全更智能",
+  description = "凌武科技 - 让数据更安全，让安全更智能。智联网数据安全领航者，致力成为客户信赖的安全伙伴。凌云之志，武勇兼备，以匠心守护数据安全。",
   image = {
-    url: "/uploads/church-default.webp",
-    alt: "Church Name",
+    url: "/logo.svg",
+    alt: "lwsec",
   },
   type = "website",
   canonicalUrl,
@@ -32,7 +32,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="generator" content={Astro.generator} />
     
     <Seo
@@ -50,9 +50,9 @@ const {
     <link rel="manifest" href="/site.webmanifest">
   </head>
   <body>
-    <div class="flex flex-col min-h-screen">
-      <Header />
-      
+    <div class="flex flex-col min-h-screen relative">
+      <Header client:load />
+
       <main class="flex-grow">
         <slot />
       </main>

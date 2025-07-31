@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 256">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #145af5;
+      }
+
+      .cls-2 {
+        fill: #00e6e6;
+      }
+
+      .cls-3 {
+        fill: url(#_未命名的渐变_21);
+      }
+    </style>
+    <linearGradient id="_未命名的渐变_21" data-name="未命名的渐变 21" x1="49.37" y1="150.17" x2="253.69" y2="150.17" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#145af5"/>
+      <stop offset=".97" stop-color="#00e6e6"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-3" d="M178.38,72.45c19.61-5.3,47.57-2.98,61.08,1.89,10.2,3.68,24.01,14.98,4.03,43.2-13.28,18.76-56.51,56.94-194.13,113.38l19.45-35.84s80.04-36.27,124.5-67.82c20.29-14.4,29.18-26.99,26.56-37.31-2.9-11.4-33.46-17.6-41.49-17.5"/>
+  <path class="cls-2" d="M207.72,176.77s-11.22,8.81-26.48,16.94l20.19,37.21h35.67l-29.38-54.15Z"/>
+  <path class="cls-1" d="M68.82,195.08l56.58-104.26,32.57,60.02c9.37-5.37,18.47-10.93,26.72-16.5L125.4,25.08,13.69,230.92h35.67l19.45-35.84h0Z"/>
+</svg>

@@ -22,7 +22,7 @@ const {
 } = Astro.props;
 
 // Get the canonical URL
-const canonicalURL = canonicalUrl || new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = canonicalUrl || (Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url.href);
 
 // Get Church address and contact info (would come from site config in a real implementation)
 const churchInfo = {
@@ -36,7 +36,7 @@ const churchInfo = {
   },
   telephone: "+1-555-123-4567",
   email: "info@churchname.org",
-  url: Astro.site?.toString() || "https://example.com",
+  url: Astro.site?.toString() || "http://localhost:4321",
 };
 ---
 
@@ -50,7 +50,7 @@ const churchInfo = {
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.url, Astro.site)} />
+<meta property="og:image" content={Astro.site ? new URL(image.url, Astro.site) : image.url} />
 <meta property="og:image:alt" content={image.alt} />
 
 <!-- Twitter -->
@@ -58,7 +58,7 @@ const churchInfo = {
 <meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image.url, Astro.site)} />
+<meta property="twitter:image" content={Astro.site ? new URL(image.url, Astro.site) : image.url} />
 <meta property="twitter:image:alt" content={image.alt} />
 
 <!-- JSON-LD Schema for Church -->
@@ -88,14 +88,14 @@ const churchInfo = {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "${title}",
-        "image": "${new URL(image.url, Astro.site)}",
+        "image": "${Astro.site ? new URL(image.url, Astro.site) : image.url}",
         "description": "${description}",
         "publisher": {
           "@type": "Organization",
           "name": "${churchInfo.name}",
           "logo": {
             "@type": "ImageObject",
-            "url": "${new URL("/uploads/logo.png", Astro.site)}"
+            "url": "${Astro.site ? new URL("/uploads/logo.png", Astro.site) : "/uploads/logo.png"}"
           }
         },
         "url": "${canonicalURL}",

@@ -47,6 +47,7 @@ module.exports = {
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
         sans: ['"Source Sans Pro"', 'system-ui', 'sans-serif'],
+        heiti: ['SimHei', 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'sans-serif'],
       },
     },
   },
