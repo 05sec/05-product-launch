@@ -18,42 +18,42 @@ const props = defineProps({
     default: () => [
       {
         name: "城市大屏",
-        image: "/city.png",
+        image: "/city.webp",
         description: "专注于城市数据可视化展示，为智慧城市建设提供专业的大屏解决方案。通过先进的数据分析技术，将复杂的城市数据转化为直观的可视化界面，助力城市管理者做出更明智的决策。",
         industry: "智慧城市"
       },
       {
         name: "2D大屏",
-        image: "/bg.png",
+        image: "/bg.webp",
         description: "提供企业级数据大屏展示服务，支持多种数据源接入和实时数据更新。采用现代化的设计理念，为企业打造专业、美观的数据展示平台，提升数据传达效率。",
         industry: "企业服务"
       },
       {
         name: "核能技术",
-        image: "/nuclear.png",
+        image: "/nuclear.webp",
         description: "在核能安全监控领域拥有丰富经验，为核电站提供先进的安全监测和数据分析系统。通过高精度的传感器网络和智能分析算法，确保核能设施的安全运行。",
         industry: "核能安全"
       },
       {
         name: "2D大屏",
-        image: "/bg.png",
+        image: "/bg.webp",
         description: "提供企业级数据大屏展示服务，支持多种数据源接入和实时数据更新。采用现代化的设计理念，为企业打造专业、美观的数据展示平台，提升数据传达效率。",
         industry: "企业服务"
       },
       {
         name: "核能技术",
-        image: "/nuclear.png",
+        image: "/nuclear.webp",
         description: "在核能安全监控领域拥有丰富经验，为核电站提供先进的安全监测和数据分析系统。通过高精度的传感器网络和智能分析算法，确保核能设施的安全运行。",
         industry: "核能安全"
       },      {
         name: "2D大屏",
-        image: "/bg.png",
+        image: "/bg.webp",
         description: "提供企业级数据大屏展示服务，支持多种数据源接入和实时数据更新。采用现代化的设计理念，为企业打造专业、美观的数据展示平台，提升数据传达效率。",
         industry: "企业服务"
       },
       {
         name: "核能技术",
-        image: "/nuclear.png",
+        image: "/nuclear.webp",
         description: "在核能安全监控领域拥有丰富经验，为核电站提供先进的安全监测和数据分析系统。通过高精度的传感器网络和智能分析算法，确保核能设施的安全运行。",
         industry: "核能安全"
       }

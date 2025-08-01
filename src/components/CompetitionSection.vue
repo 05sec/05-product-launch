@@ -27,57 +27,57 @@ import 'swiper/css/navigation';
       default: () => [
         {
           title: "梦想凌武杯",
-          image: "/competition/梦想凌武杯.png",
+          image: "/competition/梦想凌武杯.webp",
           summary: "网络安全技能竞赛，培养和选拔优秀的安全人才"
         },
         {
           title: "陕西省职业技能竞赛",
-          image: "/competition/陕西省职业技能竞赛.png",
+          image: "/competition/陕西省职业技能竞赛.webp",
           summary: "省级职业技能大赛，提升行业技能水平"
         },
         {
           title: "软件供应链安全竞赛",
-          image: "/competition/软件供应链安全竞赛.png",
+          image: "/competition/软件供应链安全竞赛.webp",
           summary: "专注于软件供应链安全，保障软件生态安全"
         },
         {
           title: "AntCTF",
-          image: "/competition/AntCTF.png",
+          image: "/competition/AntCTF.webp",
           summary: "CTF夺旗赛，考验参赛者的安全技能和团队协作"
         },
         {
           title: "CCB网络安全竞赛",
-          image: "/competition/ccb.png",
+          image: "/competition/ccb.webp",
           summary: "银行系统网络安全竞赛，保障金融安全"
         },
         {
           title: "天一永安杯",
-          image: "/competition/天一永安杯.png",
+          image: "/competition/天一永安杯.webp",
           summary: "企业级安全竞赛，推动行业安全发展"
         },
         {
           title: "振兴杯",
-          image: "/competition/振兴杯.png",
+          image: "/competition/振兴杯.webp",
           summary: "青年技能竞赛，激发青年创新活力"
         },
         {
           title: "东安商密杯",
-          image: "/competition/东安商密杯.png",
+          image: "/competition/东安商密杯.webp",
           summary: "商用密码应用竞赛，推广密码技术应用"
         },
         {
           title: "全国行业职业技能竞赛",
-          image: "/competition/全国行业职业技能竞赛.png",
+          image: "/competition/全国行业职业技能竞赛.webp",
           summary: "国家级职业技能大赛，引领行业发展"
         },
         {
           title: "GeekCon",
-          image: "/competition/GeekCon.png",
+          image: "/competition/GeekCon.webp",
           summary: "极客大会，汇聚技术精英，分享前沿技术"
         },
         {
           title: "矩阵杯",
-          image: "/competition/矩阵杯.png",
+          image: "/competition/矩阵杯.webp",
           summary: "矩阵式安全竞赛，多维度考验安全能力"
         }
       ]
@@ -90,7 +90,7 @@ import 'swiper/css/navigation';
 </script>
 
 <template>
-  <section class="py-16 bg-gradient-to-br from-black via-blue-900 to-black">
+  <section class="py-16 bg-gradient-to-br from-blue-900 via-black to-blue-900">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">{{ props.title }}</h2>

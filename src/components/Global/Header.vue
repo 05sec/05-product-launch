@@ -2,10 +2,10 @@
   <header 
     ref="headerRef"
     :class="[
-      'fixed top-0 left-0 z-50 w-[100vw] transition-all duration-300',
+      'fixed top-0 left-0 z-50 w-[100vw] transition-all duration-300 hover:bg-white/10 hover:shadow-md hover:backdrop-blur-sm',
       isIntersecting 
         ? 'bg-white shadow-md backdrop-blur-sm' 
-        : 'bg-transparent shadow-none backdrop-blur-none hover:bg-white/10 hover:shadow-md hover:backdrop-blur-sm'
+        : 'bg-transparent shadow-none backdrop-blur-none'
     ]"
   >
     <div class="container flex items-center justify-between h-20">
@@ -99,35 +99,13 @@ onMounted(async () => {
   // 创建 IntersectionObserver
   observer = new IntersectionObserver(
     async (entries) => {
-      entries.forEach(async (entry) => {
+      for (const entry of entries) {
         if (entry.isIntersecting) {
           isIntersecting.value = true;
-          
-          // 当与 infiniteScroll 相交时的动画
-          if (headerRef.value) {
-            const { gsap } = await import('gsap');
-            gsap.to(headerRef.value, {
-              backgroundColor: 'rgba(255, 255, 255, 1)',
-              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-              duration: 0.3,
-              ease: "power2.out"
-            });
-          }
         } else {
           isIntersecting.value = false;
-          
-          // 当离开 infiniteScroll 时的动画
-          if (headerRef.value) {
-            const { gsap } = await import('gsap');
-            gsap.to(headerRef.value, {
-              backgroundColor: 'rgba(255, 255, 255, 0)',
-              boxShadow: 'none',
-              duration: 0.3,
-              ease: "power2.out"
-            });
-          }
         }
-      });
+      }
     },
     {
       threshold: 0.3,
@@ -147,4 +125,13 @@ onUnmounted(() => {
     observer.disconnect();
   }
 });
-</script> 
+</script>
+
+<style scoped>
+/* 确保hover效果在非激活状态下正常工作 */
+header:not(.bg-white):hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(8px) !important;
+}
+</style> 

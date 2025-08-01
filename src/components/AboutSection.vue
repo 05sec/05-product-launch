@@ -18,7 +18,7 @@
     },
     images: {
       type: Array as () => string[],
-      default: () => ['/city.png', '/bg.png', '/nuclear.png']
+      default: () => ['/city.webp', '/bg.webp', '/nuclear.webp']
     },
     buttonText: {
       type: String,
@@ -151,8 +151,8 @@
 </script>
 
 <template>
-  <section ref="sectionRef" class="bg-gradient-to-br from-black via-blue-900 to-black">
-    <div class="container min-h-[100vh] flex items-center">
+  <section ref="sectionRef" class="bg-gradient-to-br from-black via-blue-900 to-black" :class="layout === 'left' ? 'pt-[10vh]' : 'pb-[10vh]'">
+    <div class="container min-h-[80vh] flex items-center">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
         <div ref="imageRef" class="relative group" :class="{ 'md:order-2': layout === 'right' }">
           <Swiper

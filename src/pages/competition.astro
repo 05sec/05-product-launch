@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSectionVue from "../components/HeroSection.vue";
+import AboutSection from "../components/AboutSection.vue";
+import SermonList from "../components/SermonList.vue";
+import CompetitionSection from "../components/CompetitionSection.vue";
+import InfiniteScroll from "../components/InfiniteScroll.vue";
+import CardinalDisplay from "../components/CardinalDisplay.vue";
+---
+
+<BaseLayout
+  title="凌云竞赛平台 - Cardinal"
+  description="凌云竞赛平台是集夺旗解题赛、AWD攻防赛、知识竞赛等多类型赛事为一体的专业化安全竞赛平台"
+>
+  <HeroSectionVue
+    title="凌云竞赛平台 Cardinal"
+    subTitle="多类型赛事平台，助力人才培养"
+    url="/bg.webp"
+    client:visible
+  />
+  
+  <div id="about">
+    <AboutSection
+      title="凌云竞赛平台"
+      description="凌云竞赛平台是集夺旗解题赛、AWD攻防赛、知识竞赛等多类型赛事为一体的专业化安全竞赛平台。可满足单位对培养、选拔网络安全人才、组织实操演练、举办网络安全大赛等多方面需求"
+      :images="['/city.webp', '/bg.webp', '/nuclear.webp']"
+      buttonText="查看定价"
+      buttonLink="/price"
+      layout="left"
+      client:visible
+    />
+  </div>
+  
+  <div id="sermon-list">
+    <SermonList client:visible />
+  </div>
+  
+  <div id="competitions">
+    <CompetitionSection client:visible/>
+  </div>
+
+  <div id="cardinal">
+    <CardinalDisplay client:visible/>
+  </div>
+
+  <div id="infinite">
+    <InfiniteScroll client:visible/>
+  </div>
+</BaseLayout> 

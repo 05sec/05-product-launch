@@ -29,17 +29,17 @@
       default: () => [
         {
           title: "城市大屏",
-          image: "/city.png",
+          image: "/city.webp",
           summary: "什么时候把解出题目的特效换成飞机撞大楼呢"
         },
         {
           title: "2d大屏",
-          image: "/bg.png",
+          image: "/bg.webp",
           summary: "支持主题色与背景切换,定制您的专属数据看板"
         },
         {
           title: "核能",
-          image: "/nuclear.png",
+          image: "/nuclear.webp",
           summary: "绿的,好看"
         }
       ]
