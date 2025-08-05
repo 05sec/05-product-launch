@@ -3,11 +3,13 @@
     <!-- Hero Section -->
     <section class="py-20 px-4">
       <div class="container mx-auto text-center">
-        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-          网络安全实训平台
+        <h1
+            class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-tr from-slate-50 to-blue-500 bg-clip-text text-transparent"
+        >
+          凌云竞赛平台
         </h1>
         <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-          集课程培训、练习训练、技能考核等功能于一体的网络安全实战培训系统
+          多类型赛事平台，助力人才培养
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">

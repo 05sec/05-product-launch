@@ -8,7 +8,7 @@
             v-for="logo in logos" 
             :key="`first-${logo.index}`"
             :src="logo.url" 
-            class="h-full w-auto object-contain flex-shrink-0 mx-4 opacity-30 max-h-[30vh]"
+            class="max-h-[25vh] min-w-[20vw] max-w-[40vh] object-contain flex-shrink-0 mx-4 opacity-30"
           />
         </div>
         <div class="flex flex-nowrap h-[15vh] animate-reverse-scroll items-center absolute bottom-0">
@@ -16,7 +16,7 @@
               v-for="logo in logos.slice().reverse()"
               :key="`third-${logo.index}`"
               :src="logo.url"
-              class="h-full w-auto object-contain flex-shrink-0 mx-4 opacity-10"
+              class="max-h-[25vh] min-w-[20vw] max-w-[40vh] w-auto object-contain flex-shrink-0 mx-4 opacity-10"
           />
         </div>
       </div>
@@ -164,14 +164,14 @@
 }
 
 .animate-scroll {
-  animation: scroll 40s linear infinite;
+  animation: scroll 150s linear infinite;
   &:hover {
     animation-play-state: paused;
   }
 }
 
 .animate-reverse-scroll {
-  animation: reverse-scroll 40s linear infinite;
+  animation: reverse-scroll 150s linear infinite;
   &:hover {
     animation-play-state: paused;
   }

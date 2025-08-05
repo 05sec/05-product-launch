@@ -26,7 +26,7 @@ import 'swiper/css/navigation';
       type: Array as () => Competition[],
       default: () => [
         {
-          title: "梦想凌武杯",
+          title: "梦想·凌武杯",
           image: "/competition/梦想凌武杯.webp",
           summary: "网络安全技能竞赛，培养和选拔优秀的安全人才"
         },
