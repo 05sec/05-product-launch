@@ -8,15 +8,15 @@
             v-for="logo in logos" 
             :key="`first-${logo.index}`"
             :src="logo.url" 
-            class="max-h-[25vh] min-w-[20vw] max-w-[40vh] object-contain flex-shrink-0 mx-4 opacity-30"
+            class="max-h-[10vh] w-[calc()] object-contain flex-shrink-0 mx-4 opacity-30"
           />
         </div>
-        <div class="flex flex-nowrap h-[15vh] animate-reverse-scroll items-center absolute bottom-0">
+        <div class="flex flex-nowrap h-[15vh] animate-reverse-scroll items-center absolute bottom-0 pb-6">
           <img
               v-for="logo in logos.slice().reverse()"
               :key="`third-${logo.index}`"
               :src="logo.url"
-              class="max-h-[25vh] min-w-[20vw] max-w-[40vh] w-auto object-contain flex-shrink-0 mx-4 opacity-10"
+              class="max-h-[10vh] w-auto object-contain flex-shrink-0 mx-4 opacity-10"
           />
         </div>
       </div>
@@ -71,64 +71,73 @@
 
     // 预定义的 logo 文件列表 - 已转换为webp格式
     const logoFiles = [
-      'logo-huawei.webp',
-      'logo-tencent.webp',
+      'logo-51cto.webp',
+      'logo-antgroup.webp',
+      'logo-antiddos-chinaunicom.webp',
+      'logo-arthin.webp',
+      'logo-bankgy.webp',
       'logo-byd.webp',
-      'logo-tesla.webp',
-      'logo-geely.webp',
-      'logo-xiaopeng.webp',
-      'logo-zeekr.webp',
-      'logo-honda.webp',
-      'logo-icbc.webp',
-      'logo-pingan.webp',
-      'logo-mybank.webp',
+      'logo-bytedance.webp',
+      'logo-caict.webp',
+      'logo-casted.webp',
+      'logo-cdyfy.webp',
+      'logo-ceprei.webp',
+      'logo-chengjiatech.webp',
+      'logo-chaitin.webp',
+      'logo-chinaaeri.webp',
+      'logo-chinacom.webp',
       'logo-chinamobile.webp',
       'logo-chinaunicom.webp',
-      'logo-chinacom.webp',
-      'logo-sgcc.webp',
-      'logo-qianxin.webp',
-      'logo-sangfor.webp',
-      'logo-bytedance.webp',
-      'logo-antgroup.webp',
-      'logo-joynext.webp',
-      'logo-h3c.webp',
-      'logo-hdu.webp',
-      'logo-kanxue.webp',
-      'logo-chaitin.webp',
-      'logo-casted.webp',
-      'logo-caict.webp',
-      'logo-cgnpc.webp',
+      'logo-chng.webp',
+      'logo-cmdi.webp',
+      'logo-cnetman.webp',
       'logo-coscoshipping.webp',
       'logo-csg.webp',
       'logo-cyberpeace.webp',
       'logo-dasecurity.webp',
       'logo-dbappsecurity.webp',
+      'logo-digitalx.webp',
       'logo-dingxiang.webp',
       'logo-dptech.webp',
-      'logo-eken.svg',
       'logo-fri.webp',
       'logo-future-sci-techcity.webp',
+      'logo-geely.webp',
+      'logo-h3c.webp',
       'logo-hcjyun.webp',
+      'logo-hdu.webp',
       'logo-hebtu.webp',
       'logo-hilaicloud.webp',
+      'logo-honda.webp',
+      'logo-huawei.webp',
+      'logo-icbc.webp',
       'logo-integritytech.webp',
+      'logo-joynext.webp',
+      'logo-kanxue.webp',
       'logo-lecangs.webp',
       'logo-lishui-big-data-development-administration-bureau.webp',
       'logo-most.gov.webp',
+      'logo-mybank.webp',
       'logo-nbport.webp',
       'logo-ningbo-rail-transit.webp',
       'logo-ningbo.chinatax.webp',
+      'logo-pingan.webp',
+      'logo-qianxin.webp',
       'logo-qmxc.webp',
-      'logo-smart.svg',
+      'logo-sangfor.webp',
+      'logo-sgcc.webp',
       'logo-smart-chip.webp',
       'logo-startcross.webp',
-      'logo-style3d.svg',
       'logo-tanovo.webp',
+      'logo-tencent.webp',
+      'logo-tesla.webp',
       'logo-tianfu-bank.webp',
       'logo-transfar.webp',
       'logo-wfph.webp',
+      'logo-xiaopeng.webp',
       'logo-ynrcc.webp',
+      'logo-yuan-info.webp',
       'logo-zdjy.webp',
+      'logo-zeekr.webp',
       'logo-zj.cma.webp',
       'logo-zjenergy.webp',
       'logo-zpnsf.webp'
@@ -164,14 +173,14 @@
 }
 
 .animate-scroll {
-  animation: scroll 150s linear infinite;
+  animation: scroll 60s linear infinite;
   &:hover {
     animation-play-state: paused;
   }
 }
 
 .animate-reverse-scroll {
-  animation: reverse-scroll 150s linear infinite;
+  animation: reverse-scroll 60s linear infinite;
   &:hover {
     animation-play-state: paused;
   }

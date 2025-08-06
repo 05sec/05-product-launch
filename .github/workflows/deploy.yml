@@ -1,95 +1,149 @@
-name: CI
+#name: CI
+#
+#on:
+#  push:
+#    branches: main
+#  pull_request:
+#    branches: main
+#
+#env:
+#  NODE_VERSION: '22'
+#  BUCKET: ##
+#  ENDPOINT: ##
+#  CI: true
+#
+#jobs:
+#  lint-and-test:
+#    name: 代码检查和测试
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: 检出代码
+#        uses: actions/checkout@v4
+#
+#      - name: 安装 pnpm
+#        uses: pnpm/action-setup@v4
+#        with:
+#          version: 8
+#
+#      - name: 设置 Node.js
+#        uses: actions/setup-node@v4
+#        with:
+#          node-version: ${{ env.NODE_VERSION }}
+#          cache: 'pnpm'
+#
+#      - name: 安装依赖
+#        run: pnpm install --no-frozen-lockfile
+#
+#      - name: 构建项目
+#        run: pnpm build
+#
+#      - name: 上传构建产物
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: dist
+#          path: dist/
+#          retention-days: 1
+#
+#  deploy:
+#    name: deploy to OSS
+#    runs-on: ubuntu-latest
+#    needs: lint-and-test
+#    if: github.ref == 'refs/heads/main'
+#
+#    steps:
+#      - name: 检出代码
+#        uses: actions/checkout@v4
+#
+#      - name: 安装 pnpm
+#        uses: pnpm/action-setup@v4
+#        with:
+#          version: 8
+#
+#      - name: 设置 Node.js
+#        uses: actions/setup-node@v4
+#        with:
+#          node-version: ${{ env.NODE_VERSION }}
+#          cache: 'pnpm'
+#
+#      - name: 安装依赖
+#        run: pnpm install --no-frozen-lockfile
+#
+#      - name: 构建项目
+#        run: pnpm build
+#
+#      - name: 配置阿里云OSS CLI
+#        uses: manyuanrong/setup-ossutil@master
+#        with:
+#          endpoint: ${{ env.ENDPOINT }}
+#          access-key-id: ${{ ## }}
+#          access-key-secret: ${{ ## }}
+#
+#      - name: 上传到OSS
+#        run: |
+#          # 同步构建产物到OSS
+#          ossutil cp -rf dist/ oss://${{ env.BUCKET }}/
+#
+#
+#      - name: 清理缓存
+#        run: |
+#          # 清理OSS中的旧文件
+#          # ossutil ls oss://${{ env.ENDPOINT }}/ | grep -E "\.(js|css|html)$" | head -n -10 | xargs -I {} ossutil rm {}
+#
+#      - name: 部署完成通知
+#        run: |
+#          echo "✅ 部署完成！"
 
+name: Deploy
 on:
   push:
-    branches: main
-  pull_request:
-    branches: main
-
-env:
-  NODE_VERSION: '20'
-  BUCKET: ##
-  ENDPOINT: ##
-  CI: true
+    branches: [ next ]
 
 jobs:
-  lint-and-test:
-    name: 代码检查和测试
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 检出代码
-        uses: actions/checkout@v4
-
-      - name: 安装 pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 8
-
-      - name: 设置 Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-
-      - name: 安装依赖
-        run: pnpm install --no-frozen-lockfile
-
-      - name: 构建项目
-        run: pnpm build
-
-      - name: 上传构建产物
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist/
-          retention-days: 1
-
   deploy:
-    name: deploy to OSS
+    name: Build for production
     runs-on: ubuntu-latest
-    needs: lint-and-test
-    if: github.ref == 'refs/heads/main'
-
     steps:
-      - name: 检出代码
-        uses: actions/checkout@v4
-
-      - name: 安装 pnpm
-        uses: pnpm/action-setup@v4
+      - name: checkout
+        uses: actions/checkout@v3
         with:
-          version: 8
+          fetch-depth: 1
+          submodules: false
+          token: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: 设置 Node.js
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          run_install: false
+      - name: Install NodeJS
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: latest
           cache: 'pnpm'
+          token: "${{ secrets.GITHUB_TOKEN }}"
+      - run: pnpm install && pnpm build
+        env:
+          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL }}
 
-      - name: 安装依赖
-        run: pnpm install --no-frozen-lockfile
-
-      - name: 构建项目
-        run: pnpm build
-
-      - name: 配置阿里云OSS CLI
-        uses: manyuanrong/setup-ossutil@master
+      - name: Upload to Aliyun OSS
+        uses: AliyunWorkbench/workbench-oss@1.0.0
         with:
-          endpoint: ${{ env.ENDPOINT }}
-          access-key-id: ${{ ## }}
-          access-key-secret: ${{ ## }}
-
-      - name: 上传到OSS
-        run: |
-          # 同步构建产物到OSS
-          ossutil cp -rf dist/ oss://${{ env.BUCKET }}/
-
-
-      - name: 清理缓存
-        run: |
-          # 清理OSS中的旧文件
-          # ossutil ls oss://${{ env.ENDPOINT }}/ | grep -E "\.(js|css|html)$" | head -n -10 | xargs -I {} ossutil rm {}
-
-      - name: 部署完成通知
-        run: |
-          echo "✅ 部署完成！"
+          ACCESS_KEY: ${{ secrets.ALIYUN_ACCESS_KEY }}
+          ACCESS_SECRET: ${{ secrets.ALIYUN_ACCESS_SECRET }}
+          OSS_REGION: oss-cn-shanghai
+          OSS_BUCKET: lwsec-cn
+          OSS_PATH: /
+          UPLOAD_PATH: dist
+      - name: Refresh Aliyun CDN for lwsec.cn
+        uses: 05sec/aliyun-dcdn-refresh@0.0.1
+        with:
+          AccessKeyId: ${{ secrets.ALIYUN_ACCESS_KEY }}
+          AccessKeySecret: ${{ secrets.ALIYUN_ACCESS_SECRET }}
+          ObjectPath: https://lwsec.cn/
+      - name: Refresh Aliyun CDN for www.lwsec.cn
+        uses: 05sec/aliyun-dcdn-refresh@0.0.1
+        with:
+          AccessKeyId: ${{ secrets.ALIYUN_ACCESS_KEY }}
+          AccessKeySecret: ${{ secrets.ALIYUN_ACCESS_SECRET }}
+          ObjectPath: https://www.lwsec.cn/
