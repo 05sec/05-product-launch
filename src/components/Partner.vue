@@ -18,37 +18,37 @@ const props = defineProps({
     default: () => [
       {
         name: "练习列表",
-        image: "/train/练习列表.png",
+        image: "/train/练习列表.webp",
         description: "分为理论基础和实操演练两种题型,覆盖多方向网络安全理论知识与各个安全方向的题型，题量丰富，攻防兼备，为用户提供沉浸式、全方位的训练体验",
         industry: "实战"
       },
       {
         name: "练习管理",
-        image: "/train/练习详情.png",
+        image: "/train/练习详情.webp",
         description: "灵活手动编辑相关练习题目，适应任何场景下的练习需求,满足不同学员的学习需求",
         industry: "管理"
       },
       {
         name: "课程中心",
-        image: "/train/课程中心.png",
+        image: "/train/课程中心.webp",
         description: "为学员提供海量培训课程，涵盖网络安全法规、Web安全、逆向分析等多个方向的课程体系，为用户提供全面的网络安全知识培训",
         industry: "理论"
       },
       {
         name: "题库",
-        image: "/train/题库.png",
+        image: "/train/题库.webp",
         description: "管理员可以在题库中新建或导入题目，供练习组卷时选择使用,支持题目管理、更新、补充等操作，同时支持批量导入功能，科学管理题库资源",
         industry: "管理"
       },
       {
         name: "考核",
-        image: "/train/练习考核.png",
+        image: "/train/练习考核.webp",
         description: "练习可以进行混合组卷，从题库中选取理论题和实操题，对学员进行考核，通过考核可以检验学习成果，并配套评卷机制、成绩管理，便于学员掌握自身学习情况",
         industry: "实战"
       },
       {
         name: "实操场景",
-        image: "/train/实操场景.png",
+        image: "/train/实操场景.webp",
         description: "实操场景是实操题配套的场景资源，可以进行场景的新建、编辑、删除。列表展示场景版本和更新时间，便于教员管理场景资源。可以进入场景编辑器，进行镜像管理、虚拟网络管理、靶机配置、图形化编辑等操作，便于教员统一配置、快速构建复杂的实操环境",
         industry: "实战"
       },
