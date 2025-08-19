@@ -16,11 +16,11 @@ import 'swiper/css/navigation';
   const props = defineProps({
     title: {
       type: String,
-      default: '承办的比赛',
+      default: '典型案例',
     },
     subtitle: {
       type: String,
-      default: '滚动展示,左右带蒙版效果',
+      default: '专业全面、技术先进、实战驱动、稳定可靠、广泛落地',
     },
     competitions: {
       type: Array as () => Competition[],
@@ -28,32 +28,32 @@ import 'swiper/css/navigation';
         {
           title: "梦想·凌武杯",
           image: "/competition/梦想凌武杯.webp",
-          summary: "网络安全技能竞赛，培养和选拔优秀的安全人才"
+          summary: "2023杭州未来科技城网络信息安全管理员职业技能竞赛"
         },
         {
-          title: "陕西省职业技能竞赛",
+          title: "陕西省2024职业技能竞赛",
           image: "/competition/陕西省职业技能竞赛.webp",
-          summary: "省级职业技能大赛，提升行业技能水平"
+          summary: "数据安全管理员赛项"
         },
         {
-          title: "软件供应链安全竞赛",
+          title: "2024软件供应链安全竞赛",
           image: "/competition/软件供应链安全竞赛.webp",
           summary: "专注于软件供应链安全，保障软件生态安全"
         },
         {
           title: "AntCTF",
           image: "/competition/AntCTF.webp",
-          summary: "CTF夺旗赛，考验参赛者的安全技能和团队协作"
+          summary: "与蚂蚁集团合办的 CTF 比赛"
         },
         {
-          title: "CCB网络安全竞赛",
+          title: "长城杯",
           image: "/competition/ccb.webp",
-          summary: "银行系统网络安全竞赛，保障金融安全"
+          summary: "第十八届全国大学生信息安全竞赛"
         },
         {
-          title: "天一永安杯",
+          title: "天一·永安杯",
           image: "/competition/天一永安杯.webp",
-          summary: "企业级安全竞赛，推动行业安全发展"
+          summary: "2024宁波第七届网络安全大赛"
         },
         {
           title: "振兴杯",
@@ -70,16 +70,16 @@ import 'swiper/css/navigation';
           image: "/competition/全国行业职业技能竞赛.webp",
           summary: "国家级职业技能大赛，引领行业发展"
         },
-        {
-          title: "GeekCon",
-          image: "/competition/GeekCon.webp",
-          summary: "极客大会，汇聚技术精英，分享前沿技术"
-        },
-        {
-          title: "矩阵杯",
-          image: "/competition/矩阵杯.webp",
-          summary: "矩阵式安全竞赛，多维度考验安全能力"
-        }
+        // {
+        //   title: "GeekCon",
+        //   image: "/competition/GeekCon.webp",
+        //   summary: "极客大会，汇聚技术精英，分享前沿技术"
+        // },
+        // {
+        //   title: "矩阵杯",
+        //   image: "/competition/矩阵杯.webp",
+        //   summary: "国产软硬件安全检测赛"
+        // }
       ]
     },
     showViewAll: {
@@ -144,12 +144,6 @@ import 'swiper/css/navigation';
           </div>
         </SwiperSlide>
         </Swiper>
-      </div>
-      
-      <div v-if="props.showViewAll" class="mt-12 text-center">
-        <a href="/ministries" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white border border-white hover:bg-white hover:text-gray-900 rounded-md shadow-sm transition-colors">
-          查看更多
-        </a>
       </div>
     </div>
   </section>

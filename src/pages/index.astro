@@ -4,6 +4,7 @@ import HeroSectionVue from "../components/HeroSection.vue";
 import AboutSection from "../components/AboutSection.vue";
 import CompetitionSection from "../components/CompetitionSection.vue";
 import InfiniteScroll from "../components/InfiniteScroll.vue";
+import ContactUs from "../components/ContactUs.vue";
 ---
 
 <BaseLayout
@@ -21,7 +22,7 @@ import InfiniteScroll from "../components/InfiniteScroll.vue";
     <AboutSection
       title="凌云竞赛平台"
       description="凌云竞赛平台是集夺旗解题赛、AWD攻防赛、知识竞赛等多类型赛事为一体的专业化安全竞赛平台。可满足单位对培养、选拔网络安全人才、组织实操演练、举办网络安全大赛等多方面需求"
-      :images="['/city.webp', '/bg.webp', '/nuclear.webp']"
+      :images="['/cardinal/city.webp', '/cardinal/bg.webp', '/cardinal/nuclear.webp']"
       buttonText="了解更多"
       buttonLink="/competition"
       layout="left"
@@ -34,18 +35,18 @@ import InfiniteScroll from "../components/InfiniteScroll.vue";
     <AboutSection
       title="实训平台"
       description="实训平台是集课程培训、练习训练、技能考核等功能于一体的网络安全实战培训系统。能够提供丰富的体系化训练内容，涵盖多方面的理论基础教学和实操演练，用于支撑网络空间攻防实战能力教学与培训，为用户提供全面的网络安全知识培训，提升网络空间攻防基础知识，培养网络空间攻防实战能力。并支持定制化的课程设置、考试模拟，满足不同人才培养需求。"
-      :images="['/bg.webp', '/city.webp', '/nuclear.webp']"
+      :images="['/cardinal/city.webp', '/cardinal/bg.webp', '/cardinal/nuclear.webp']"
       buttonText="了解更多"
       buttonLink="/training"
       layout="right"
       client:visible
     />
   </div>
-  
-  <div id="competitions">
-    <CompetitionSection client:visible/>
-  </div>
 
+  <div id="competitions">
+      <CompetitionSection client:visible/>
+  </div>
+  
   <div id="infinite">
     <InfiniteScroll client:visible/>
   </div>

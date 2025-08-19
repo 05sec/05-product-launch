@@ -48,7 +48,7 @@
       },
       {
         scale: 1,
-        opacity: 0.6,
+        opacity: 1,
         duration: 1.5,
         ease: "power2.out"
       }
@@ -148,7 +148,7 @@
     <img 
       ref="backgroundRef"
       :src="props.url" 
-      class="absolute w-full h-full opacity-60 -z-10 blur-sm" 
+      class="absolute w-full h-full -z-10 blur-sm"
       alt="凌云竞赛平台"
     />
     <div class="container">

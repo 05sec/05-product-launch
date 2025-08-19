@@ -5,40 +5,48 @@ import AboutSection from "../components/AboutSection.vue";
 import Partner from "../components/Partner.vue";
 import CompetitionSection from "../components/CompetitionSection.vue";
 import InfiniteScroll from "../components/InfiniteScroll.vue";
+import TrainingSwiper from "../components/TrainingSwiper.vue";
+import ContactUs from "../components/ContactUs.vue";
+import PricingSection from "../components/PricingSection.vue";
 ---
 
 <BaseLayout
   title="实训平台 - Training"
   description="实训平台是集课程培训、练习训练、技能考核等功能于一体的网络安全实战培训系统"
+  forceHeaderIntersecting={true}
 >
   <HeroSectionVue
     title="实训平台 Training"
     subTitle="网络安全实战培训系统"
-    url="/city.webp"
+    url="/main-page.webp"
     client:visible
   />
-  
-  <div id="about">
-    <AboutSection
-      title="实训平台"
-      description="实训平台是集课程培训、练习训练、技能考核等功能于一体的网络安全实战培训系统。能够提供丰富的体系化训练内容，涵盖多方面的理论基础教学和实操演练，用于支撑网络空间攻防实战能力教学与培训，为用户提供全面的网络安全知识培训，提升网络空间攻防基础知识，培养网络空间攻防实战能力。并支持定制化的课程设置、考试模拟，满足不同人才培养需求。"
-      :images="['/bg.webp', '/city.webp', '/nuclear.webp']"
-      buttonText="开始实训"
-      buttonLink="/train"
-      layout="right"
-      client:visible
-    />
-  </div>
-  
-  <div id="partners">
-    <Partner client:visible/>
-  </div>
-  
-  <div id="competitions">
-    <CompetitionSection client:visible/>
-  </div>
 
-  <div id="infinite">
-    <InfiniteScroll client:visible/>
-  </div>
+  <AboutSection
+    title="实训平台"
+    description="实训平台是集课程培训、练习训练、技能考核等功能于一体的网络安全实战培训系统。能够提供丰富的体系化训练内容，涵盖多方面的理论基础教学和实操演练，用于支撑网络空间攻防实战能力教学与培训，为用户提供全面的网络安全知识培训，提升网络空间攻防基础知识，培养网络空间攻防实战能力。并支持定制化的课程设置、考试模拟，满足不同人才培养需求。"
+    :images="['/train/联系详情.png', '/train/联系列表.png', '/train/题库.png', '/train/课程中心.png']"
+    buttonText="开始实训"
+    buttonLink="/train"
+    layout="right"
+    client:visible
+  />
+
+  <Partner client:visible/>
+
+  <TrainingSwiper client:visible/>
+
+  <PricingSection
+    title="选择您的专属方案"
+    subTitle="满足任何培训场景需求"
+    gradientType="left"
+    client:visible
+  />
+
+  <ContactUs client:visible gradientType="right" />
+
+  <CompetitionSection client:visible/>
+
+  <InfiniteScroll client:visible/>
+
 </BaseLayout> 

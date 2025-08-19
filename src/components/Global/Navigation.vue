@@ -82,8 +82,6 @@ const navItems = [
   { text: "首页", href: "/" },
   { text: "凌云竞赛平台", href: "/competition" },
   { text: "实训平台", href: "/training" },
-  { text: "测试页面", href: "/train" },
-  { text: "定价方案", href: "/price" },
 ];
 
 const isMenuOpen = ref(false);

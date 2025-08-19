@@ -28,29 +28,24 @@
       type: Array as () => Sermon[],
       default: () => [
         {
-          title: "城市大屏",
-          image: "/city.webp",
-          summary: "什么时候把解出题目的特效换成飞机撞大楼呢"
+          title: "3D大屏",
+          image: "/cardinal/city.webp",
+          summary: "炫酷的展示效果与视觉冲击,不一样的数据看板"
         },
         {
-          title: "2d大屏",
-          image: "/bg.webp",
+          title: "2D大屏",
+          image: "/cardinal/bg.webp",
           summary: "支持主题色与背景切换,定制您的专属数据看板"
         },
         {
-          title: "核能",
-          image: "/nuclear.webp",
-          summary: "绿的,好看"
+          title: "行业大屏",
+          image: "/cardinal/nuclear.webp",
+          summary: "多种行业主题,贴合任意竞赛需求"
         }
       ]
     }
   });
 
-  const sectionRef = ref<HTMLElement>();
-  const titleRef = ref<HTMLElement>();
-  const subtitleRef = ref<HTMLElement>();
-  const cardsRef = ref<HTMLElement[]>([]);
-  const buttonRef = ref<HTMLElement>();
   const swiperContainerRef = ref<HTMLElement>();
   const currentSlide = ref(0);
 
@@ -67,102 +62,7 @@
     }
   };
 
-  onMounted(async () => {
-    if (!sectionRef.value) return;
-
-    const { gsap } = await import('gsap');
-    const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-    
-    // 注册 ScrollTrigger 插件
-    gsap.registerPlugin(ScrollTrigger);
-
-    // 创建时间轴
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.value,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse"
-      }
-    });
-
-    // 标题动画 - 从上方滑入
-    if (titleRef.value) {
-      tl.fromTo(titleRef.value,
-        {
-          y: -50,
-          opacity: 0,
-          scale: 0.8
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          ease: "back.out(1.7)"
-        }
-      );
-    }
-
-    // 副标题动画 - 从下方滑入
-    if (subtitleRef.value) {
-      tl.fromTo(subtitleRef.value,
-        {
-          y: 30,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: "power2.out"
-        },
-        "-=0.4"
-      );
-    }
-
-    // 卡片动画 - 依次从下方滑入
-    cardsRef.value.forEach((card, index) => {
-      if (card) {
-        tl.fromTo(card,
-          {
-            y: 100,
-            opacity: 0,
-            scale: 0.8,
-            rotationY: 15
-          },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            rotationY: 0,
-            duration: 0.8,
-            ease: "back.out(1.7)"
-          },
-          `-=${0.6 - index * 0.1}`
-        );
-      }
-    });
-
-    // 按钮动画 - 从下方滑入并添加弹性效果
-    if (buttonRef.value) {
-      tl.fromTo(buttonRef.value,
-        {
-          y: 50,
-          opacity: 0,
-          scale: 0.8
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.6,
-          ease: "back.out(1.7)"
-        },
-        "-=0.3"
-      );
-    }
-
+  onMounted(() => {
     // 移动端滑动指示器
     if (swiperContainerRef.value) {
       swiperContainerRef.value.addEventListener('scroll', () => {
@@ -180,11 +80,11 @@
 </script>
 
 <template>
-  <section ref="sectionRef" class="py-16 bg-gradient-to-br from-blue-900 via-black to-blue-900">
+  <section class="py-16 bg-gradient-to-br from-blue-900 via-black to-blue-900">
     <div class="container">
       <div class="text-center mb-12">
-        <h1 ref="titleRef" class="text-3xl md:text-4xl mb-4 text-white">{{ props.title }}</h1>
-        <p ref="subtitleRef" class="text-xl text-white max-w-3xl mx-auto">
+        <h1 class="text-3xl md:text-4xl mb-4 text-white">{{ props.title }}</h1>
+        <p class="text-xl text-white max-w-3xl mx-auto">
           {{ props.subtitle }}
         </p>
       </div>
@@ -194,7 +94,6 @@
         <div 
           v-for="(sermon, index) in props.sermons.slice(0, props.count)" 
           :key="sermon.title"
-          :ref="el => { if (el) cardsRef[index] = el as HTMLElement }"
           class="bg-white rounded-lg shadow-2xl border-2 border-gray-200 hover:shadow-3xl hover:border-blue-300 transition-all duration-300 overflow-hidden transform hover:scale-105 hover:-translate-y-2 group"
         >
           <!-- Image at top -->
@@ -209,9 +108,13 @@
           
           <!-- Content below image -->
           <div class="p-6">
-            <h3 class="text-xl font-bold mb-3 text-gray-900 transition-colors duration-300 group-hover:text-blue-600">{{ sermon.title }}</h3>
+            <h3 class="text-xl font-bold mb-3 text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
+              {{ sermon.title }}
+            </h3>
             
-            <p class="text-gray-700 mb-4">{{ sermon.summary }}</p>
+            <p class="text-gray-700 mb-4">
+              {{ sermon.summary }}
+            </p>
           </div>
         </div>
       </div>
@@ -224,7 +127,6 @@
             <div 
               v-for="(sermon, index) in props.sermons.slice(0, props.count)" 
               :key="sermon.title"
-              :ref="el => { if (el) cardsRef[index] = el as HTMLElement }"
               class="bg-white rounded-lg shadow-2xl border-2 border-gray-200 hover:shadow-3xl hover:border-blue-300 transition-all duration-300 overflow-hidden transform hover:scale-105 hover:-translate-y-2 group flex-shrink-0 w-80 snap-center"
             >
               <!-- Image at top -->
@@ -239,9 +141,13 @@
               
               <!-- Content below image -->
               <div class="p-6">
-                <h3 class="text-xl font-bold mb-3 text-gray-900 transition-colors duration-300 group-hover:text-blue-600">{{ sermon.title }}</h3>
+                <h3 class="text-xl font-bold mb-3 text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
+                  {{ sermon.title }}
+                </h3>
                 
-                <p class="text-gray-700 mb-4">{{ sermon.summary }}</p>
+                <p class="text-gray-700 mb-4">
+                  {{ sermon.summary }}
+                </p>
               </div>
             </div>
           </div>
@@ -258,14 +164,13 @@
           </div>
         </div>
       </div>
-      
+
       <div v-if="props.showViewAll && props.sermons.length > 0" class="mt-12 text-center">
-        <a 
-          ref="buttonRef"
-          href="/price" 
+        <a
+          href="/competition#contact"
           class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white border-2 border-white hover:bg-white hover:text-gray-900 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
         >
-          为您定制
+          预约演示
         </a>
       </div>
     </div>

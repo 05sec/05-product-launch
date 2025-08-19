@@ -18,7 +18,7 @@
     },
     images: {
       type: Array as () => string[],
-      default: () => ['/city.webp', '/bg.webp', '/nuclear.webp']
+      default: () => ['/cardinal/bg.webp', '/cardinal/city.webp', '/cardinal/nuclear.webp']
     },
     buttonText: {
       type: String,
@@ -156,6 +156,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
         <div ref="imageRef" class="relative group" :class="{ 'md:order-2': layout === 'right' }">
           <Swiper
+            v-if="props.images && props.images.length > 0"
             :modules="[Autoplay, Pagination, Navigation, EffectFade]"
             :slides-per-view="1"
             :space-between="0"
@@ -182,6 +183,9 @@
               />
             </SwiperSlide>
           </Swiper>
+          <div v-else class="w-full h-96 bg-gray-800 rounded-lg shadow-lg flex items-center justify-center">
+            <p class="text-gray-400 text-lg">暂无图片</p>
+          </div>
         </div>
         
         <!-- Content Section -->

@@ -8,7 +8,8 @@
             v-for="logo in logos" 
             :key="`first-${logo.index}`"
             :src="logo.url" 
-            class="max-h-[10vh] w-[calc()] object-contain flex-shrink-0 mx-4 opacity-30"
+            :style="{ height: '10vh', width: logo.width + 'px' }"
+            class="object-contain flex-shrink-0 mx-4 opacity-30"
           />
         </div>
         <div class="flex flex-nowrap h-[15vh] animate-reverse-scroll items-center absolute bottom-0 pb-6">
@@ -16,7 +17,8 @@
               v-for="logo in logos.slice().reverse()"
               :key="`third-${logo.index}`"
               :src="logo.url"
-              class="max-h-[10vh] w-auto object-contain flex-shrink-0 mx-4 opacity-10"
+              :style="{ height: '10vh', width: logo.width + 'px' }"
+              class="object-contain flex-shrink-0 mx-4 opacity-10"
           />
         </div>
       </div>
@@ -65,6 +67,7 @@
     interface Logo {
       url: string;
       index: number;
+      width: number;
     }
 
     const logos = ref<Logo[]>([]);
@@ -143,44 +146,70 @@
       'logo-zpnsf.webp'
     ];
 
-    onMounted(() => {
-      // 过滤有效的图片文件并生成 logo 数据
-      logos.value = logoFiles
+    // Calculate image width based on aspect ratio
+    const calculateImageWidth = (imageUrl: string): Promise<number> => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => {
+          // Fixed height is 10vh, calculate width based on aspect ratio
+          const aspectRatio = img.width / img.height;
+          const heightInPx = window.innerHeight * 0.1; // 10vh in pixels
+          const widthInPx = heightInPx * aspectRatio;
+          resolve(widthInPx);
+        };
+        img.onerror = () => {
+          // Fallback width if image fails to load
+          resolve(100);
+        };
+        img.src = imageUrl;
+      });
+    };
+
+    onMounted(async () => {
+      // Filter valid image files and generate logo data with calculated widths
+      const logoPromises = logoFiles
         .filter(fileName => /\.(svg|webp)$/i.test(fileName))
-        .map((fileName, index) => ({
-          url: `/consumers/${fileName}`,
-          index: index + 1
-        }));
+        .map(async (fileName, index) => {
+          const url = `/consumers/${fileName}`;
+          const width = await calculateImageWidth(url);
+          return {
+            url,
+            index: index + 1,
+            width
+          };
+        });
+
+      logos.value = await Promise.all(logoPromises);
     });
   </script>
 <style scoped lang="scss">
 @keyframes scroll {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% + 100vw));
   }
   100% {
-    transform: translateX(0%);
+    transform: translateX(-100vw);
   }
 }
 
 @keyframes reverse-scroll {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-100vw);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% + 100vw));
   }
 }
 
 .animate-scroll {
-  animation: scroll 60s linear infinite;
+  animation: scroll 120s linear infinite;
   &:hover {
     animation-play-state: paused;
   }
 }
 
 .animate-reverse-scroll {
-  animation: reverse-scroll 60s linear infinite;
+  animation: reverse-scroll 120s linear infinite;
   &:hover {
     animation-play-state: paused;
   }

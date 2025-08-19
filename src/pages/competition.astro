@@ -5,7 +5,8 @@ import SermonList from "../components/SermonList.vue";
 import CompetitionSection from "../components/CompetitionSection.vue";
 import InfiniteScroll from "../components/InfiniteScroll.vue";
 import FeatureSection from "../components/FeatureSection.vue";
-import Train from "../components/Train.vue";
+import ContactUs from "../components/ContactUs.vue";
+import PricingSection from "../components/PricingSection.vue";
 ---
 
 <BaseLayout
@@ -15,7 +16,7 @@ import Train from "../components/Train.vue";
   <HeroSectionVue
     title="凌云竞赛平台 Cardinal"
     subTitle="多类型赛事平台，助力人才培养"
-    url="/bg.webp"
+    url="/cardinal/bg.webp"
     client:visible
   />
   
@@ -24,6 +25,18 @@ import Train from "../components/Train.vue";
   <FeatureSection client:visible/>
 
   <CompetitionSection client:visible/>
+
+  <!-- 价格部分 -->
+  <PricingSection 
+    title="选择您的专属方案"
+    subTitle="满足任意竞赛需求"
+    gradientType="right"
+    client:visible 
+  />
+
+  <div id="contact">
+    <ContactUs client:visible gradientType="left" />
+  </div>
 
   <InfiniteScroll client:visible/>
 

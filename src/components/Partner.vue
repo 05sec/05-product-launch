@@ -17,56 +17,50 @@ const props = defineProps({
     type: Array as () => Partner[],
     default: () => [
       {
-        name: "城市大屏",
-        image: "/city.webp",
-        description: "专注于城市数据可视化展示，为智慧城市建设提供专业的大屏解决方案。通过先进的数据分析技术，将复杂的城市数据转化为直观的可视化界面，助力城市管理者做出更明智的决策。",
-        industry: "智慧城市"
+        name: "练习列表",
+        image: "/train/练习列表.png",
+        description: "分为理论基础和实操演练两种题型,覆盖多方向网络安全理论知识与各个安全方向的题型，题量丰富，攻防兼备，为用户提供沉浸式、全方位的训练体验",
+        industry: "实战"
       },
       {
-        name: "2D大屏",
-        image: "/bg.webp",
-        description: "提供企业级数据大屏展示服务，支持多种数据源接入和实时数据更新。采用现代化的设计理念，为企业打造专业、美观的数据展示平台，提升数据传达效率。",
-        industry: "企业服务"
+        name: "练习管理",
+        image: "/train/练习详情.png",
+        description: "灵活手动编辑相关练习题目，适应任何场景下的练习需求,满足不同学员的学习需求",
+        industry: "管理"
       },
       {
-        name: "核能技术",
-        image: "/nuclear.webp",
-        description: "在核能安全监控领域拥有丰富经验，为核电站提供先进的安全监测和数据分析系统。通过高精度的传感器网络和智能分析算法，确保核能设施的安全运行。",
-        industry: "核能安全"
+        name: "课程中心",
+        image: "/train/课程中心.png",
+        description: "为学员提供海量培训课程，涵盖网络安全法规、Web安全、逆向分析等多个方向的课程体系，为用户提供全面的网络安全知识培训",
+        industry: "理论"
       },
       {
-        name: "2D大屏",
-        image: "/bg.webp",
-        description: "提供企业级数据大屏展示服务，支持多种数据源接入和实时数据更新。采用现代化的设计理念，为企业打造专业、美观的数据展示平台，提升数据传达效率。",
-        industry: "企业服务"
+        name: "题库",
+        image: "/train/题库.png",
+        description: "管理员可以在题库中新建或导入题目，供练习组卷时选择使用,支持题目管理、更新、补充等操作，同时支持批量导入功能，科学管理题库资源",
+        industry: "管理"
       },
       {
-        name: "核能技术",
-        image: "/nuclear.webp",
-        description: "在核能安全监控领域拥有丰富经验，为核电站提供先进的安全监测和数据分析系统。通过高精度的传感器网络和智能分析算法，确保核能设施的安全运行。",
-        industry: "核能安全"
-      },      {
-        name: "2D大屏",
-        image: "/bg.webp",
-        description: "提供企业级数据大屏展示服务，支持多种数据源接入和实时数据更新。采用现代化的设计理念，为企业打造专业、美观的数据展示平台，提升数据传达效率。",
-        industry: "企业服务"
+        name: "考核",
+        image: "/train/练习考核.png",
+        description: "练习可以进行混合组卷，从题库中选取理论题和实操题，对学员进行考核，通过考核可以检验学习成果，并配套评卷机制、成绩管理，便于学员掌握自身学习情况",
+        industry: "实战"
       },
       {
-        name: "核能技术",
-        image: "/nuclear.webp",
-        description: "在核能安全监控领域拥有丰富经验，为核电站提供先进的安全监测和数据分析系统。通过高精度的传感器网络和智能分析算法，确保核能设施的安全运行。",
-        industry: "核能安全"
-      }
-
+        name: "实操场景",
+        image: "/train/实操场景.png",
+        description: "实操场景是实操题配套的场景资源，可以进行场景的新建、编辑、删除。列表展示场景版本和更新时间，便于教员管理场景资源。可以进入场景编辑器，进行镜像管理、虚拟网络管理、靶机配置、图形化编辑等操作，便于教员统一配置、快速构建复杂的实操环境",
+        industry: "实战"
+      },
     ]
   },
   title: {
     type: String,
-    default: '实训平台的演示'
+    default: '功能演示'
   },
   subtitle: {
     type: String,
-    default: '不是我喜欢的 flag,直接作弊'
+    default: '集理论,实操,管理于一体,功能强大,体验优秀'
   }
 })
 
@@ -86,9 +80,9 @@ const handleSlideChange = (swiper: any) => {
         <p class="text-xl text-gray-400 max-w-3xl mx-auto">{{ props.subtitle }}</p>
       </div>
       
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="flex flex-col gap-12 items-center">
         <!-- Swiper Section -->
-        <div class="relative group">
+        <div class="relative group w-full max-w-2xl">
           <Swiper
             ref="swiperRef"
             :modules="[EffectCards, Autoplay]"
@@ -112,9 +106,9 @@ const handleSlideChange = (swiper: any) => {
         </div>
         
         <!-- Description Section -->
-        <div class="space-y-6">
+        <div class="space-y-6 text-center max-w-4xl">
           <div class="partner-info">
-            <div class="flex items-center mb-3">
+            <div class="flex items-center justify-center mb-3">
               <h3 class="text-2xl font-bold text-white mr-4">{{ props.partners[activeIndex]?.name }}</h3>
               <span class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">{{ props.partners[activeIndex]?.industry }}</span>
             </div>
