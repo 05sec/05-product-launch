@@ -76,11 +76,11 @@
             </p>
             <ul ref="list1Ref" class="space-y-3">
               <li ref="item1Ref" class="flex items-start">
-                <span class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0">✓</span>
+                <span class="w-5 h-5 text-blue-200 mt-0.5 mr-3 flex-shrink-0">✓</span>
                 <span class="text-gray-300">允许1400+支队伍参赛，5000+动态靶机实例部署</span>
               </li>
               <li ref="item2Ref" class="flex items-start">
-                <span class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0">✓</span>
+                <span class="w-5 h-5 text-blue-200 mt-0.5 mr-3 flex-shrink-0">✓</span>
                 <span class="text-gray-300">1100万+次攻击动作处理，1万+次题目附件下载</span>
               </li>
             </ul>
@@ -89,8 +89,8 @@
 
         <div ref="feature2Ref" class="flex flex-col lg:flex-row-reverse items-center gap-12">
           <div class="lg:w-1/2">
-            <div ref="card2Ref" class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 shadow-lg feature-card relative overflow-hidden">
-              <img src="/cardinal/nuclear.webp" alt="核能背景图片" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+            <div ref="card2Ref" class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg feature-card relative overflow-hidden">
+              <img src="/cardinal/city.webp" alt="核能背景图片" class="absolute inset-0 w-full h-full object-cover opacity-20" />
               <div class="relative z-10">
                 <div ref="icons2Ref" class="flex items-center justify-center space-x-4">
                   <div ref="docIconsRef" class="relative">
@@ -111,32 +111,32 @@
                     </div>
                   </div>
                   
-                  <div ref="report2Ref" class="bg-green-100 rounded-lg p-4">
-                    <h4 class="text-sm font-semibold text-green-800 mb-3">技术优势</h4>
+                  <div ref="report2Ref" class="bg-blue-100 rounded-lg p-4">
+                    <h4 class="text-sm font-semibold text-blue-800 mb-3">技术优势</h4>
                     <div ref="standardsListRef" class="space-y-2">
                       <div ref="standard1Ref" class="flex items-center space-x-2">
-                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
-                        <span class="text-sm text-green-700">弹性伸缩部署</span>
+                        <span class="text-sm text-blue-700">弹性伸缩部署</span>
                       </div>
                       <div ref="standard2Ref" class="flex items-center space-x-2">
-                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
-                        <span class="text-sm text-green-700">自动计分机制</span>
+                        <span class="text-sm text-blue-700">自动计分机制</span>
                       </div>
                       <div ref="standard3Ref" class="flex items-center space-x-2">
-                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
-                        <span class="text-sm text-green-700">防作弊机制</span>
+                        <span class="text-sm text-blue-700">防作弊机制</span>
                       </div>
                       <div ref="standard4Ref" class="flex items-center space-x-2">
-                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
-                        <span class="text-sm text-green-700">动态调度靶机</span>
+                        <span class="text-sm text-blue-700">动态调度靶机</span>
                       </div>
                     </div>
                   </div>
@@ -146,25 +146,25 @@
           </div>
           
           <div ref="text2Ref" class="lg:w-1/2 lg:pr-8">
-            <h3 ref="title2Ref" class="text-2xl md:text-3xl font-bold text-green-600 mb-4">技术先进，平台智能化程度高</h3>
+            <h3 ref="title2Ref" class="text-2xl md:text-3xl font-bold text-blue-400 mb-4">技术先进，平台智能化程度高</h3>
             <p ref="desc2Ref" class="text-gray-400 mb-6 text-lg">
               高效、自动、贴近实战的网络对抗环境
             </p>
             <ul ref="list2Ref" class="space-y-3">
               <li ref="item5Ref" class="flex items-start">
-                <span class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0">✓</span>
+                <span class="w-5 h-5 text-blue-200 mt-0.5 mr-3 flex-shrink-0">✓</span>
                 <span class="text-gray-300">智能化弹性伸缩部署，自动根据用户需求分配资源</span>
               </li>
               <li ref="item6Ref" class="flex items-start">
-                <span class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0">✓</span>
+                <span class="w-5 h-5 text-blue-200 mt-0.5 mr-3 flex-shrink-0">✓</span>
                 <span class="text-gray-300">自动计分机制，无需人工干预，实时评分</span>
               </li>
               <li ref="item7Ref" class="flex items-start">
-                <span class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0">✓</span>
+                <span class="w-5 h-5 text-blue-200 mt-0.5 mr-3 flex-shrink-0">✓</span>
                 <span class="text-gray-300">业务仿真技术，模拟真实业务场景</span>
               </li>
               <li ref="item8Ref" class="flex items-start">
-                <span class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0">✓</span>
+                <span class="w-5 h-5 text-blue-200 mt-0.5 mr-3 flex-shrink-0">✓</span>
                 <span class="text-gray-300">动态靶机分发调度</span>
               </li>
             </ul>
