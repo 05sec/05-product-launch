@@ -24,13 +24,12 @@
 import { ref, onMounted, onUnmounted, watch } from 'vue';
 import Navigation from "./Navigation.vue";
 
-interface Props {
-  forceIntersecting?: boolean;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  forceIntersecting: false
-});
+const props = defineProps({
+  forceIntersecting: {
+    type: Boolean,
+    default: false
+  }
+})
 
 const isIntersecting = ref(false);
 let observer: IntersectionObserver | null = null;
@@ -47,7 +46,6 @@ onMounted(async () => {
     return;
   }
 
-  // 创建 IntersectionObserver
   observer = new IntersectionObserver(
     async (entries) => {
       for (const entry of entries) {
@@ -79,7 +77,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* 确保hover效果在非激活状态下正常工作 */
 header:not(.bg-white):hover {
   background-color: rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;

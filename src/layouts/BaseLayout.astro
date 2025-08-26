@@ -2,7 +2,7 @@
 import "../assets/styles/global.css";
 import Seo from "../components/UI/Seo.astro";
 import Header from "../components/Global/Header.vue";
-import Footer from "../components/Global/Footer.astro";
+import Footer from "../components/Global/Footer.vue";
 
 export interface Props {
   title?: string;
@@ -58,7 +58,7 @@ const {
         <slot />
       </main>
       
-      <Footer />
+      <Footer client:only />
     </div>
   </body>
 </html>

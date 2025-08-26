@@ -22,33 +22,25 @@
                 <div ref="buttons1Ref" class="flex flex-col space-y-3">
                   <div ref="button1Ref" class="flex items-center space-x-3 bg-white rounded-lg p-3 shadow-sm">
                     <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center icon-animate">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                      </svg>
+                      <Icons name="lock" :size="20" class="text-white" />
                     </div>
                     <span class="text-sm font-medium text-gray-700">CTF夺旗赛</span>
                   </div>
                   <div ref="button2Ref" class="flex items-center space-x-3 bg-white rounded-lg p-3 shadow-sm">
                     <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center icon-animate">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                      </svg>
+                      <Icons name="shield-check" :size="20" class="text-white" />
                     </div>
                     <span class="text-sm font-medium text-gray-700">AWD攻防赛</span>
                   </div>
                   <div ref="button3Ref" class="flex items-center space-x-3 bg-white rounded-lg p-3 shadow-sm">
                     <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center icon-animate">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                      </svg>
+                      <Icons name="book-open" :size="20" class="text-white" />
                     </div>
                     <span class="text-sm font-medium text-gray-700">知识竞赛</span>
                   </div>
                   <div ref="button4Ref" class="flex items-center space-x-3 bg-white rounded-lg p-3 shadow-sm">
                     <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center icon-animate">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                      </svg>
+                      <Icons name="lightning" :size="20" class="text-white" />
                     </div>
                     <span class="text-sm font-medium text-gray-700">实战演练</span>
                   </div>
@@ -95,19 +87,13 @@
                 <div ref="icons2Ref" class="flex items-center justify-center space-x-4">
                   <div ref="docIconsRef" class="relative">
                     <div ref="doc1Ref" class="w-16 h-16 bg-white rounded-lg shadow-md border-2 border-gray-200 flex items-center justify-center transform rotate-12">
-                      <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                      </svg>
+                      <Icons name="document" :size="32" class="text-gray-400" />
                     </div>
                     <div ref="doc2Ref" class="w-16 h-16 bg-white rounded-lg shadow-md border-2 border-gray-200 flex items-center justify-center transform -rotate-6 absolute top-2 left-2">
-                      <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                      </svg>
+                      <Icons name="document" :size="32" class="text-gray-400" />
                     </div>
                     <div ref="doc3Ref" class="w-16 h-16 bg-white rounded-lg shadow-md border-2 border-blue-300 flex items-center justify-center transform rotate-3 absolute top-1 left-1">
-                      <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                      </svg>
+                      <Icons name="document" :size="32" class="text-blue-500" />
                     </div>
                   </div>
                   
@@ -115,27 +101,19 @@
                     <h4 class="text-sm font-semibold text-blue-800 mb-3">技术优势</h4>
                     <div ref="standardsListRef" class="space-y-2">
                       <div ref="standard1Ref" class="flex items-center space-x-2">
-                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
+                        <Icons name="document" :size="16" class="text-blue-600" />
                         <span class="text-sm text-blue-700">弹性伸缩部署</span>
                       </div>
                       <div ref="standard2Ref" class="flex items-center space-x-2">
-                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
+                        <Icons name="document" :size="16" class="text-blue-600" />
                         <span class="text-sm text-blue-700">自动计分机制</span>
                       </div>
                       <div ref="standard3Ref" class="flex items-center space-x-2">
-                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
+                        <Icons name="document" :size="16" class="text-blue-600" />
                         <span class="text-sm text-blue-700">防作弊机制</span>
                       </div>
                       <div ref="standard4Ref" class="flex items-center space-x-2">
-                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
+                        <Icons name="document" :size="16" class="text-blue-600" />
                         <span class="text-sm text-blue-700">动态调度靶机</span>
                       </div>
                     </div>
@@ -177,6 +155,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import Icons from './UI/Icons.vue';
 
 const sectionRef = ref<HTMLElement>();
 const titleRef = ref<HTMLElement>();

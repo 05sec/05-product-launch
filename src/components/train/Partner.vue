@@ -114,15 +114,6 @@ const handleSlideChange = (swiper: any) => {
             </div>
             <p class="text-gray-300 leading-relaxed">{{ props.partners[activeIndex]?.description }}</p>
           </div>
-          
-          <div class="pt-6">
-            <a 
-              href="/partners" 
-              class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white border-2 border-white hover:bg-white hover:text-gray-900 rounded-md shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              了解更多合作伙伴 →
-            </a>
-          </div>
         </div>
       </div>
     </div>

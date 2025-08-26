@@ -24,7 +24,7 @@
               <button class="w-full py-3 px-6 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors duration-200">
                 立刻开始
               </button>
-            </div>
+             </div>
             <ul class="space-y-4">
               <li class="flex items-start">
                 <span class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0 font-bold">✓</span>
@@ -222,17 +222,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* 自定义样式 */
 .container {
   max-width: 1200px;
-}
-
-/* 悬停效果 */
-.hover\:shadow-xl:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.hover\:shadow-2xl:hover {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 </style> 
